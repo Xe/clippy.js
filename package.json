@@ -1,6 +1,6 @@
 {
-  "name": "clippyjs",
-  "version": "0.0.3",
+  "name": "@xeserv/clippyjs",
+  "version": "0.1.0",
   "description": "Add Clippy or his friends to any website for instant nostalgia.",
   "main": "dist/clippy.js",
   "web": "dist/clippy.js",
@@ -9,7 +9,8 @@
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -c -w",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "push:assets": "AWS_PROFILE=tigris aws s3 sync . s3://xedn/pub/clippy.js"
   },
   "repository": {
     "type": "git",
@@ -29,7 +30,7 @@
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-uglify": "^2.0.1",
-    "rollup-watch": "^4.0.0",
+    "rollup-watch": "^3.2.2",
     "uglify-js-harmony": "^2.7.7"
   }
 }
